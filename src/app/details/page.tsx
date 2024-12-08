@@ -1,6 +1,7 @@
 'use client'; // Ensure this component runs on the client side
 import { useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';  // For heart icon
+import Image from 'next/image';
 
 // Define the car type
 type Car = {
@@ -85,11 +86,13 @@ const CarRental = () => {
     <p className="text-white mt-2">
       Safety and comfort while driving a futuristic and elegant sports car.
     </p>
-    <img
-      src="/d1.png"
-      alt="Silver sports car"
-      className="mt-4 rounded-lg"
-    />
+    <Image
+  src="/d1.png"
+  alt="Silver sports car"
+  width={500} // Specify the width (adjust as needed)
+  height={300} // Specify the height (adjust as needed)
+  className="mt-4 rounded-lg"
+/>
   </div>
 
   {/* Nissan GT-R Section */}
@@ -113,10 +116,10 @@ const CarRental = () => {
           <span className="text-gray-300">
             <i className="fas fa-star"></i>
           </span>
-          <span className="text-gray-500 ml-2">440+ Reviewer</span>
+          <span className="text-gray-500 ml-2">Reviewer</span>
         </div>
         <p className="mt-4 text-gray-600">
-          NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the "race track".
+          NISMO has become the embodiment of Nissans outstanding performance, inspired by the most unforgiving proving ground, the race track.
         </p>
         <div className="mt-4">
           <div className="flex justify-between text-gray-600">
@@ -154,21 +157,29 @@ const CarRental = () => {
      
             
                 <div className="flex mt-4 space-x-4">
-                  <img
-                    src="/d2.png"
-                    alt="Silver sports car"
-                    className="border-4 border-blue-500 rounded-lg"
-                  />
-                  <img
-                    src="/d3.png"
-                    alt="Car interior dashboard"
-                    className="rounded-lg"
-                  />
-                  <img
-                    src="/d4.png"
-                    alt="Car interior seats"
-                    className="rounded-lg"
-                  />
+                <Image
+  src="/d2.png"
+  alt="Silver sports car"
+  width={156}
+  height={14}
+  className="border-4 border-blue-500 rounded-lg"
+/>
+
+<Image
+  src="/d3.png"
+  alt="Car interior dashboard"
+  width={156}
+  height={14}
+  className="rounded-lg"
+/>
+
+<Image
+  src="/d4.png"
+  alt="Car interior seats"
+  width={156}
+  height={14}
+  className="rounded-lg"
+/>
                 </div>
               </div>
             </div>
@@ -182,11 +193,7 @@ const CarRental = () => {
               </div>
               <div className="mt-4">
                 <div className="flex items-start space-x-4">
-                  <img
-                    src="https://placehold.co/50x50"
-                    alt="Reviewer profile"
-                    className="rounded-full"
-                  />
+                
                   <div>
                     <div className="flex justify-between items-center">
                       <div>
@@ -218,11 +225,7 @@ const CarRental = () => {
                   </div>
                 </div>
                 <div className="flex items-start space-x-4 mt-4">
-                  <img
-                    src="https://placehold.co/50x50"
-                    alt="Reviewer profile"
-                    className="rounded-full"
-                  />
+                  
                   <div>
                     <div className="flex justify-between items-center">
                       <div>
@@ -274,11 +277,13 @@ const CarRental = () => {
                     </div>
 
                     <div className="text-gray-500 mb-2">{car.type}</div>
-                    <img
-                      src={car.image}
-                      alt={`${car.name} image`}
-                      className="w-full h-auto object-cover mb-4 rounded-md"
-                    />
+                    <Image
+  src={car.image}
+  alt={`${car.name} image`}
+  width={500}
+  height={500}
+  className="w-full h-auto object-cover mb-4 rounded-md"
+/>
 
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center">

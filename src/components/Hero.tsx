@@ -286,7 +286,7 @@ export const RecommendedCarPage: React.FC = () => {
             key={index}
             car={car}
             index={index}
-            handleFavoriteToggle={(index: any) => console.log("Favorite toggled", index)}
+            handleFavoriteToggle={(index) => console.log("Favorite toggled", index)}
           />
         ))}
       </div>
