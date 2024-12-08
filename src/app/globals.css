@@ -2,26 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Mobile Small */
+@media (max-width: 480px) {
+  /* Custom styles for small screens */
+  body {
+    font-size: 14px;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .container {
+    padding: 10px;
+  }
+
+  /* Other styles */
+  .navbar {
+    display: block;
+    text-align: center;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* Mobile Large */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Custom styles for mobile large screens */
+  body {
+    font-size: 16px;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .container {
+    padding: 20px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
   }
 }
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Custom styles for tablets */
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+/* Small Laptop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  /* Custom styles for small laptops */
+  body {
+    font-size: 20px;
+  }
+
+  .container {
+    padding: 40px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1441px) {
+  /* Custom styles for large desktops */
+  body {
+    font-size: 22px;
+  }
+
+  .container {
+    padding: 50px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
