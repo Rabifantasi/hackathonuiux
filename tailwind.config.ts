@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)", // Custom CSS variable
         foreground: "var(--foreground)", // Custom CSS variable
       },
+      fontFamily: {
+        rag: ['Rag', 'sans-serif'],
+      },
     },
   },
   plugins: [], // You can add Tailwind plugins here

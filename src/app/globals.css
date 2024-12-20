@@ -2,89 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Mobile Small */
+/* Use Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
+/* Paragraphs */
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Utility Classes for Tailwind */
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive Typography */
 @media (max-width: 480px) {
-  /* Custom styles for small screens */
   body {
     font-size: 14px;
   }
+}
 
-  .container {
-    padding: 10px;
-  }
-
-  /* Other styles */
-  .navbar {
-    display: block;
-    text-align: center;
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 15px;
   }
 }
 
-/* Mobile Large */
-@media (min-width: 481px) and (max-width: 768px) {
-  /* Custom styles for mobile large screens */
+@media (min-width: 769px) and (max-width: 1024px) {
   body {
     font-size: 16px;
   }
-
-  .container {
-    padding: 20px;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-  }
 }
 
-/* Tablet */
-@media (min-width: 769px) and (max-width: 1024px) {
-  /* Custom styles for tablets */
+@media (min-width: 1025px) {
   body {
     font-size: 18px;
   }
-
-  .container {
-    padding: 30px;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-around;
-  }
 }
-
-/* Small Laptop */
-@media (min-width: 1025px) and (max-width: 1440px) {
-  /* Custom styles for small laptops */
-  body {
-    font-size: 20px;
-  }
-
-  .container {
-    padding: 40px;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-/* Large Desktop */
-@media (min-width: 1441px) {
-  /* Custom styles for large desktops */
-  body {
-    font-size: 22px;
-  }
-
-  .container {
-    padding: 50px;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-  }
-}
-

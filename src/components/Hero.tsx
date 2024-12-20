@@ -4,17 +4,18 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { LuArrowDownUp } from "react-icons/lu";
 import CarCard from "./CarCards";
+import "../app/globals.css"
 
 const Hero = () => {
   return (
-    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
-    <div className="bg-gray-50 min-h-screen flex items-center justify-center">
+    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]" >
+    <div className="bg-gray-1000 min-h-screen flex items-center justify-center">
       <section className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div
             className="bg-blue-400 p-6 rounded-lg shadow-md"
             style={{
-              backgroundImage: "url('/Ellipse 40.png')", // Corrected syntax for inline style
+              backgroundImage: "url('/img1.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -38,7 +39,14 @@ const Hero = () => {
             />
           </div>
 
-          <div className="bg-blue-800 p-6 rounded-lg shadow-md">
+          <div className="bg-blue-800 p-6 rounded-lg shadow-md"
+                      style={{
+                        backgroundImage: "url('/img2.png')", // Corrected syntax for inline style
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+          
+          >
             <h2 className="text-3xl font-bold text-[#FFFFFF] w-[272px] mb-2">
               Easy way to rent a car at a low price
             </h2>
@@ -166,15 +174,15 @@ export const PopularCarPage: React.FC = () => {
   };
 
   return (
-    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
+    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]">
       <div className="p-6 bg-gray-100">
       <h2 className="text-xl font-bold text-slate-400 mt-6 ml-4 text-left mb-8">
         Popular Car
         <span className="flex justify-end text-blue-600 font-medium">view all</span>
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {cars.map((car, index) => (
+      <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
+                {cars.map((car, index) => (
           <CarCard
             key={index}
             car={car}
@@ -273,7 +281,7 @@ export const RecommendedCarPage: React.FC = () => {
   ];
 
   return (
-    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
+    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]">
     <div className="p-6 bg-gray-100">
       <h2 className="text-xl font-bold text-slate-400 mt-6 ml-4 text-left mb-8">
         Recommended Car
@@ -291,13 +299,14 @@ export const RecommendedCarPage: React.FC = () => {
         ))}
       </div>
 
-      <Image
-        src="/Show More.png"
-        alt="Show More Button"
-        width={156}
-        height={44}
-        className="mx-auto mt-6"
-      />
+      <div className="flex justify-center mt-6">
+    <button
+      className="px-6 py-3 text-white font-medium bg-blue-500 hover:bg-blue-600 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+      aria-label="Show More"
+    >
+      Show More
+    </button>
+  </div>
     </div>
     </div>
   );
