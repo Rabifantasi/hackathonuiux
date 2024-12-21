@@ -7,12 +7,12 @@ import "../app/globals.css";
 const Footer: React.FC = () => {
   const pathname = usePathname();
 
-  // Define the route where the footer should not appear
+
   const hideFooterOnRoutes = ["/last-page"];
 
-  // Check if the current route matches any route in the list
+  
   if (hideFooterOnRoutes.includes(pathname)) {
-    return null; // Do not render footer on these routes
+    return null; 
   }
 
   return (
