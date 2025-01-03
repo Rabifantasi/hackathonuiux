@@ -155,13 +155,18 @@ const Page = () => {
               <span className="font-semibold text-sm">$80.00</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-500 text-sm">Insurance</span>
-              <span className="font-semibold text-sm">$10.00</span>
+              <span className="text-gray-500 text-sm">Tax</span>
+              <span className="font-semibold text-sm">$0</span>
             </div>
-            <div className="flex justify-between">
-              <span className="text-gray-500 text-sm">Total</span>
-              <span className="font-semibold text-lg">$90.00</span>
+            <div className="flex items-center space-x-2 mt-4">
+              <input type="text" placeholder="Apply promo code" className="border border-gray-300 p-3 rounded-lg w-full text-sm" />
+              <button className="bg-blue-600 text-white px-4 py-3 rounded-lg text-sm">Apply now</button>
             </div>
+            <div className="flex justify-between mt-4">
+              <span className="text-gray-500 text-sm">Total Rental Price</span>
+              <span className="text-2xl font-semibold">$80.00</span>
+            </div>
+            <p className="text-gray-500 text-sm">Overall price and includes rental discount</p>
           </div>
         </div>
       </div>

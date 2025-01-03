@@ -1,4 +1,4 @@
-'use client'; // Ensure this component runs on the client side
+'use client'; // Ensure this component runs on the client side 
 import { useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa'; // For heart icon
 import Image from 'next/image';
@@ -76,19 +76,21 @@ const CarRental = () => {
             {/* Header Section */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-top mb-6">
               <div
-                className="p-6 rounded-lg shadow-lg h-[350px] bg-cover bg-center"
+                className="p-6 rounded-lg shadow-lg h-[350px]"
                 style={{
                   backgroundImage: "url('/img2.png')",
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               >
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Sports car with the best design and acceleration</h2>
+                <h2 className="text-4xl font-bold text-white mb-4">Sports car with the best design and acceleration</h2>
                 <p className="text-white mb-6">Safety and comfort while driving a futuristic and elegant sports car.</p>
                 <Image
                   src="/aa.png"
                   alt="Car"
                   width={340}
                   height={108}
-                  className="mt-4 ml-10 lg:ml-40 object-cover"
+                  className="mt-4 ml-40 object-cover"
                 />
               </div>
 
@@ -131,7 +133,8 @@ const CarRental = () => {
             </div>
 
             {/* Cars Gallery Section */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-1 mb-6 mt-[-150px]">
+            
+            <div className="grid grid-cols-3 gap-1 mb-6 mr-[600px] mt-[-150px]">
               <Image src="/d2.png" alt="Silver sports car" width={156} height={100} className="rounded-lg" />
               <Image src="/d3.png" alt="Car interior dashboard" width={156} height={100} className="rounded-lg" />
               <Image src="/d4.png" alt="Car interior seats" width={156} height={100} className="rounded-lg" />
@@ -158,31 +161,33 @@ const CarRental = () => {
               </div>
             </div>
 
-            {/* Car Listings Section */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Main Cars Section */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {carsState.map((car, index) => (
                 <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-                  <Image
-                    src={car.image}
-                    alt={car.name}
-                    width={400}
-                    height={250}
-                    className="rounded-t-lg object-cover h-48 w-full"
-                  />
-                  <div className="p-2">
-                    <h3 className="text-lg font-semibold">{car.name}</h3>
-                    <p className="text-sm text-gray-500">{car.type}</p>
-                    <div className="flex justify-between mt-2">
-                      <div>
-                        <span className="text-xl font-bold">${car.price}.00</span>
-                        {car.oldPrice && (
-                          <span className="text-gray-400 line-through ml-2">${car.oldPrice}.00</span>
-                        )}
-                      </div>
-                      <button onClick={() => handleFavoriteToggle(index)}>
-                        {car.favorite ? <FaHeart className="text-red-500" /> : <FaRegHeart className="text-gray-400" />}
-                      </button>
+                  <div className="relative">
+                    <Image
+                      src={car.image}
+                      alt={car.name}
+                      width={500}
+                      height={300}
+                      className="rounded-lg w-full h-60 object-cover"
+                    />
+                    <button
+                      className={`absolute top-2 right-2 text-2xl ${car.favorite ? 'text-red-500' : 'text-gray-400'}`}
+                      onClick={() => handleFavoriteToggle(index)}
+                    >
+                      {car.favorite ? <FaHeart /> : <FaRegHeart />}
+                    </button>
+                  </div>
+                  <h3 className="text-xl font-semibold mt-2">{car.name}</h3>
+                  <p className="text-gray-600">{car.type}</p>
+                  <div className="flex justify-between items-center mt-2">
+                    <div>
+                      <span className="text-lg font-bold">${car.price}</span>
+                      {car.oldPrice && <span className="text-gray-500 line-through ml-2">${car.oldPrice}</span>}
                     </div>
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-lg">Rent Now</button>
                   </div>
                 </div>
               ))}
