@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"; 
 import { FiSearch, FiSettings } from "react-icons/fi";
 import { AiOutlineHeart, AiOutlineBell } from "react-icons/ai";
 import Image from "next/image";

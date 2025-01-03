@@ -4,20 +4,32 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}", // For Next.js 13+ App Router
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)", // Custom CSS variable
-        foreground: "var(--foreground)", // Custom CSS variable
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
+      screens: {
+
+      xs: '480px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+      custom: '1400px',
+
+      }, 
+
       fontFamily: {
         rag: ['Rag', 'sans-serif'],
       },
     },
   },
-  plugins: [], // You can add Tailwind plugins here
+  plugins: [],
 };
 
 export default config;

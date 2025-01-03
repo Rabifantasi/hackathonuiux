@@ -18,7 +18,7 @@ type Car = {
   favorite: boolean;
 };
 
-// Array of car objects with `image` field instead of `img`
+// Array of car objects with image field instead of img
 const cars: Car[] = [
   { name: 'Koenigsegg', type: 'Sport', price: 99, oldPrice: null, image: '/c1.png', fuel: '90L', transmission: 'Manual', capacity: '2 People', favorite: false },
   { name: 'Nissan GT - R', type: 'Sport', price: 80, oldPrice: 100, image: '/c2.png', fuel: '80L', transmission: 'Manual', capacity: '2 People', favorite: false },
@@ -42,7 +42,7 @@ const CarRental = () => {
   };
 
   return (
-    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
+    <div className="container mx-auto p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
       <div className="min-h-screen bg-gray-100 p-4">
         <div className="flex flex-col lg:flex-row gap-6"> {/* Added gap between sidebar and content */}
           {/* Sidebar */}
@@ -78,28 +78,28 @@ const CarRental = () => {
 
           {/* Pick-Up and Drop-Off Section in White Box */}
           <div className="flex flex-col w-full lg:w-3/4 gap-6">
-  <div className="bg-white p-6 rounded-lg shadow-md">
-    <div className="flex flex-col md:flex-row gap-6">
-      {/* Pick-Up Section */}
-      <div className="flex-1">
-        <h3 className="text-lg font-medium mb-2">Pick-Up</h3> 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="block bg-white">
-            <label className="block text-sm mb-1"><b>Locations </b></label>
-            <select className="w-full border rounded-md p-2 text-xs"> {/* Applying text-xs to make the text small */}
-              <option>Select your city</option>
-            </select>
-          </div>
-          <div className="block bg-white">
-            <label className="block text-sm mb-1"><b>Date </b></label>
-            <input type="date" className="w-full border rounded-md p-2 text-xs" /> {/* Applying text-xs here */}
-          </div>
-          <div className="block bg-white">
-            <label className="block text-sm mb-1"><b>Time </b></label>
-            <input type="time" className="w-full border rounded-md p-2 text-xs" /> {/* Applying text-xs here */}
-          </div>
-        </div>
-      </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <div className="flex flex-col md:flex-row gap-6">
+                {/* Pick-Up Section */}
+                <div className="flex-1">
+                  <h3 className="text-lg font-medium mb-2">Pick-Up</h3> 
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="block bg-white">
+                      <label className="block text-sm mb-1"><b>Locations </b></label>
+                      <select className="w-full border rounded-md p-2 text-xs">
+                        <option>Select your city</option>
+                      </select>
+                    </div>
+                    <div className="block bg-white">
+                      <label className="block text-sm mb-1"><b>Date </b></label>
+                      <input type="date" className="w-full border rounded-md p-2 text-xs" />
+                    </div>
+                    <div className="block bg-white">
+                      <label className="block text-sm mb-1"><b>Time </b></label>
+                      <input type="time" className="w-full border rounded-md p-2 text-xs" />
+                    </div>
+                  </div>
+                </div>
 
                 {/* Arrow Button */}
                 <div className="flex justify-center items-center">
@@ -110,24 +110,24 @@ const CarRental = () => {
 
                 {/* Drop-Off Section */}
                 <div className="flex-1">
-  <h3 className="text-lg font-medium mb-2">Drop-Off</h3>  {/* Changed font-medium for better visibility */}
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-    <div className="block bg-white">
-      <label className="block text-sm mb-1">Locations</label>
-      <select className="w-full border rounded-md p-2 text-xs">  {/* Apply text-xs to make the font small */}
-        <option><b>Select your city </b></option>
-      </select>
-    </div>
-    <div className="block bg-white">
-      <label className="block text-sm mb-1"><b>Date </b></label>
-      <input type="date" className="w-full border rounded-md p-2 text-xs" />  {/* Apply text-xs here */}
-    </div>
-    <div className="block bg-white">
-      <label className="block text-sm mb-1"><b>Time </b></label>
-      <input type="time" className="w-full border rounded-md p-2 text-xs" />  {/* Apply text-xs here */}
-    </div>
-  </div>
-</div>
+                  <h3 className="text-lg font-medium mb-2">Drop-Off</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="block bg-white">
+                      <label className="block text-sm mb-1">Locations</label>
+                      <select className="w-full border rounded-md p-2 text-xs">
+                        <option><b>Select your city </b></option>
+                      </select>
+                    </div>
+                    <div className="block bg-white">
+                      <label className="block text-sm mb-1"><b>Date </b></label>
+                      <input type="date" className="w-full border rounded-md p-2 text-xs" />
+                    </div>
+                    <div className="block bg-white">
+                      <label className="block text-sm mb-1"><b>Time </b></label>
+                      <input type="time" className="w-full border rounded-md p-2 text-xs" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -138,49 +138,17 @@ const CarRental = () => {
                   <div key={index} className="bg-white p-4 rounded-lg shadow-md">
                     <div className="flex justify-between items-center mb-4">
                       <h3 className="text-lg font-semibold">{car.name}</h3>
-                      <button onClick={() => handleFavoriteToggle(index)}>
-                        {car.favorite ? (
-                          <FaHeart className="text-red-500" />
-                        ) : (
-                          <FaRegHeart className="text-gray-500" />
-                        )}
+                      <button onClick={() => handleFavoriteToggle(index)} className="text-red-500 hover:text-red-600">
+                        {car.favorite ? <FaHeart size={20} /> : <FaRegHeart size={20} />}
                       </button>
                     </div>
-
-                    <div className="text-gray-500 mb-2">{car.type}</div>
-                    <Image
-                      src={car.image}
-                      alt={`${car.name} image`}
-                      width={156}
-                      height={44}
-                      className="w-full h-auto object-cover mb-4 rounded-md"
-                    />
-
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="flex items-center">
-                        <i className="fas fa-gas-pump text-gray-500 mr-2"></i>
-                        <span className="text-gray-700">{car.fuel}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <i className="fas fa-cogs text-gray-500 mr-2"></i>
-                        <span className="text-gray-700">{car.transmission}</span>
-                      </div>
-                      <div className="flex items-center">
-                        <i className="fas fa-user-friends text-gray-500 mr-2"></i>
-                        <span className="text-gray-700">{car.capacity}</span>
-                      </div>
+                    <Image src={car.image} alt={car.name} width={400} height={200} className="object-cover rounded-lg mb-2" />
+                    <p className="text-sm text-gray-700">{car.type}</p>
+                    <div className="flex justify-between items-center mt-2">
+                      <p className="text-lg font-bold">${car.price}</p>
+                      {car.oldPrice && <p className="text-sm line-through text-gray-500">${car.oldPrice}</p>}
                     </div>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-lg font-semibold">
-                          ${car.price}.00 <span className="text-gray-500 text-sm">/ day</span>
-                        </div>
-                        {car.oldPrice && (
-                          <div className="text-gray-500 line-through">${car.oldPrice}.00</div>
-                        )}
-                      </div>
-                      <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Rent Now</button>
-                    </div>
+                    <p className="text-sm text-gray-600 mt-1">{car.fuel} - {car.transmission} - {car.capacity}</p>
                   </div>
                 ))}
               </div>

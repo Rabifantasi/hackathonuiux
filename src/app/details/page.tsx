@@ -74,26 +74,22 @@ const CarRental = () => {
           {/* Main Content */}
           <div className="flex flex-col w-full lg:w-3/4">
             {/* Header Section */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-top mb-6 ">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-top mb-6">
               <div
-                className="p-6 rounded-lg shadow-lg h-[350px]  "
+                className="p-6 rounded-lg shadow-lg h-[350px] bg-cover bg-center"
                 style={{
                   backgroundImage: "url('/img2.png')",
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
                 }}
               >
-                <h2 className="text-4xl font-bold text-white mb-4">Sports car with the best design and accelaration</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Sports car with the best design and acceleration</h2>
                 <p className="text-white mb-6">Safety and comfort while driving a futuristic and elegant sports car.</p>
                 <Image
-                              src="/aa.png"
-                              alt="Car"
-                              width={340}
-                              height={108}
-                              className="mt-4 ml-40 object-cover"
-                            />
-
-
+                  src="/aa.png"
+                  alt="Car"
+                  width={340}
+                  height={108}
+                  className="mt-4 ml-10 lg:ml-40 object-cover"
+                />
               </div>
 
               {/* Nissan GT-R Section */}
@@ -135,7 +131,7 @@ const CarRental = () => {
             </div>
 
             {/* Cars Gallery Section */}
-            <div className="grid grid-cols-3 gap-1 mb-6 mr-[600px] mt-[-150px]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-1 mb-6 mt-[-150px]">
               <Image src="/d2.png" alt="Silver sports car" width={156} height={100} className="rounded-lg" />
               <Image src="/d3.png" alt="Car interior dashboard" width={156} height={100} className="rounded-lg" />
               <Image src="/d4.png" alt="Car interior seats" width={156} height={100} className="rounded-lg" />
@@ -162,29 +158,31 @@ const CarRental = () => {
               </div>
             </div>
 
-            {/* Main Cars Section */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Car Listings Section */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {carsState.map((car, index) => (
                 <div key={index} className="bg-white p-4 rounded-lg shadow-md">
-                  <div className="flex justify-between items-center mb-4">
+                  <Image
+                    src={car.image}
+                    alt={car.name}
+                    width={400}
+                    height={250}
+                    className="rounded-t-lg object-cover h-48 w-full"
+                  />
+                  <div className="p-2">
                     <h3 className="text-lg font-semibold">{car.name}</h3>
-                    <button onClick={() => handleFavoriteToggle(index)}>
-                      {car.favorite ? <FaHeart className="text-red-500" /> : <FaRegHeart className="text-gray-500" />}
-                    </button>
-                  </div>
-                  <Image src={car.image} alt={`${car.name} image`} width={500} height={300} className="rounded-md" />
-                  <div className="text-gray-500 mt-2">{car.type}</div>
-                  <div className="flex items-center justify-between mt-4">
-                    <span className="text-gray-700">{car.fuel}</span>
-                    <span className="text-gray-700">{car.transmission}</span>
-                    <span className="text-gray-700">{car.capacity}</span>
-                  </div>
-                  <div className="flex justify-between items-center mt-6">
-                    <div>
-                      <div className="text-lg font-semibold">${car.price}.00</div>
-                      {car.oldPrice && <div className="text-gray-500 line-through">${car.oldPrice}.00</div>}
+                    <p className="text-sm text-gray-500">{car.type}</p>
+                    <div className="flex justify-between mt-2">
+                      <div>
+                        <span className="text-xl font-bold">${car.price}.00</span>
+                        {car.oldPrice && (
+                          <span className="text-gray-400 line-through ml-2">${car.oldPrice}.00</span>
+                        )}
+                      </div>
+                      <button onClick={() => handleFavoriteToggle(index)}>
+                        {car.favorite ? <FaHeart className="text-red-500" /> : <FaRegHeart className="text-gray-400" />}
+                      </button>
                     </div>
-                    <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Rent Now</button>
                   </div>
                 </div>
               ))}

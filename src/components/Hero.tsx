@@ -1,126 +1,125 @@
-"use client"
+"use client";
 
-import React, { useState } from "react";
 import Image from "next/image";
 import { LuArrowDownUp } from "react-icons/lu";
+import "../app/globals.css";
+import React, { useState } from "react";
 import CarCard from "./CarCards";
-import "../app/globals.css"
 
 const Hero = () => {
   return (
-    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]" >
-    <div className="bg-gray-1000 min-h-screen flex items-center justify-center">
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            className="bg-blue-400 p-6 rounded-lg shadow-md"
-            style={{
-              backgroundImage: "url('/img1.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <h2 className="text-3xl w-[272px] font-bold text-[#FFFFFF] mb-2">
-              The Best Platform for Car Rental
-            </h2>
-            <p className="text-white mb-6 w-[284px]">
-              Ease of doing a car rental safely and reliably. Of course at a low
-              price.
-            </p>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-              Rental Car
-            </button>
-            <Image
-              src="/1.png"
-              alt="Car"
-              width={340}
-              height={108}
-              className="mt-4 ml-40 object-cover"
-            />
-          </div>
+    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]">
+      <div className="bg-gray-1000 min-h-screen flex items-center justify-center">
+        <section className="container mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div
+              className="bg-blue-400 p-6 rounded-lg shadow-md"
+              style={{
+                backgroundImage: "url('/img1.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <h2 className="text-3xl w-full font-bold text-[#FFFFFF] mb-2">
+                The Best Platform for Car Rental
+              </h2>
+              <p className="text-white mb-6 w-full">
+                Ease of doing a car rental safely and reliably. Of course at a low price.
+              </p>
+              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                Rental Car
+              </button>
+              <Image
+                src="/1.png"
+                alt="Car"
+                width={340}
+                height={108}
+                className="mt-4 ml-0 md:ml-40 object-cover"
+              />
+            </div>
 
-          <div className="bg-blue-800 p-6 rounded-lg shadow-md"
-                      style={{
-                        backgroundImage: "url('/img2.png')", // Corrected syntax for inline style
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-          
-          >
-            <h2 className="text-3xl font-bold text-[#FFFFFF] w-[272px] mb-2">
-              Easy way to rent a car at a low price
-            </h2>
-            <p className="text-white mb-6 w-[284px]">
-              Providing cheap car rental services and safe and comfortable
-              facilities.
-            </p>
-            <button className="bg-[#54A6FF] text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-              Rental Car
-            </button>
-            <Image
-              src="/2.png"
-              alt="Car"
-              width={340}
-              height={108}
-              className="mt-4 ml-40 object-cover"
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row items-center gap-4 mt-8 bg-white p-6 rounded-lg shadow-md">
-          <div className="flex-1">
-            <h3 className="text-lg font-medium mb-2">Pick-Up</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div>
-                <label className="block text-sm mb-1">Locations</label>
-                <select className="w-full border rounded-md p-2">
-                  <option>Select your city</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm mb-1">Date</label>
-                <input type="date" className="w-full border rounded-md p-2" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">Time</label>
-                <input type="time" className="w-full border rounded-md p-2" />
-              </div>
+            <div
+              className="bg-blue-800 p-6 rounded-lg shadow-md"
+              style={{
+                backgroundImage: "url('/img2.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <h2 className="text-3xl font-bold text-[#FFFFFF] w-full mb-2">
+                Easy way to rent a car at a low price
+              </h2>
+              <p className="text-white mb-6 w-full">
+                Providing cheap car rental services and safe and comfortable facilities.
+              </p>
+              <button className="bg-[#54A6FF] text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+                Rental Car
+              </button>
+              <Image
+                src="/2.png"
+                alt="Car"
+                width={340}
+                height={108}
+                className="mt-4 ml-0 md:ml-40 object-cover"
+              />
             </div>
           </div>
 
-          <div>
-            <button className="bg-blue-500 text-white p-4 rounded-full shadow-md hover:bg-blue-600">
-              <LuArrowDownUp />
-            </button>
-          </div>
+          <div className="flex flex-col md:flex-row items-center gap-4 mt-8 bg-white p-6 rounded-lg shadow-md">
+            <div className="flex-1">
+              <h3 className="text-lg font-medium mb-2">Pick-Up</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-sm mb-1">Locations</label>
+                  <select className="w-full border rounded-md p-2">
+                    <option>Select your city</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">Date</label>
+                  <input type="date" className="w-full border rounded-md p-2" />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">Time</label>
+                  <input type="time" className="w-full border rounded-md p-2" />
+                </div>
+              </div>
+            </div>
 
-          <div className="flex-1">
-            <h3 className="text-lg font-medium mb-2">Drop-Off</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div>
-                <label className="block text-sm mb-1">Locations</label>
-                <select className="w-full border rounded-md p-2">
-                  <option>Select your city</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm mb-1">Date</label>
-                <input type="date" className="w-full border rounded-md p-2" />
-              </div>
-              <div>
-                <label className="block text-sm mb-1">Time</label>
-                <input type="time" className="w-full border rounded-md p-2" />
+            <div>
+              <button className="bg-blue-500 text-white p-4 rounded-full shadow-md hover:bg-blue-600">
+                <LuArrowDownUp />
+              </button>
+            </div>
+
+            <div className="flex-1">
+              <h3 className="text-lg font-medium mb-2">Drop-Off</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-sm mb-1">Locations</label>
+                  <select className="w-full border rounded-md p-2">
+                    <option>Select your city</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">Date</label>
+                  <input type="date" className="w-full border rounded-md p-2" />
+                </div>
+                <div>
+                  <label className="block text-sm mb-1">Time</label>
+                  <input type="time" className="w-full border rounded-md p-2" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
     </div>
   );
 };
 
 export default Hero;
+
 
 export const PopularCarPage: React.FC = () => {
   const [cars, setCars] = useState([
@@ -176,22 +175,22 @@ export const PopularCarPage: React.FC = () => {
   return (
     <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]">
       <div className="p-6 bg-gray-100">
-      <h2 className="text-xl font-bold text-slate-400 mt-6 ml-4 text-left mb-8">
-        Popular Car
-        <span className="flex justify-end text-blue-600 font-medium">view all</span>
-      </h2>
+        <h2 className="text-xl font-bold text-slate-400 mt-6 ml-4 text-left mb-8">
+          Popular Car
+          <span className="flex justify-end text-blue-600 font-medium">view all</span>
+        </h2>
 
-      <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
-                {cars.map((car, index) => (
-          <CarCard
-            key={index}
-            car={car}
-            index={index}
-            handleFavoriteToggle={handleFavoriteToggle}
-          />
-        ))}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {cars.map((car, index) => (
+            <CarCard
+              key={index}
+              car={car}
+              index={index}
+              handleFavoriteToggle={handleFavoriteToggle}
+            />
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
@@ -282,32 +281,32 @@ export const RecommendedCarPage: React.FC = () => {
 
   return (
     <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]">
-    <div className="p-6 bg-gray-100">
-      <h2 className="text-xl font-bold text-slate-400 mt-6 ml-4 text-left mb-8">
-        Recommended Car
-        <span className="flex justify-end text-blue-600 font-medium">view all</span>
-      </h2>
+      <div className="p-6 bg-gray-100">
+        <h2 className="text-xl font-bold text-slate-400 mt-6 ml-4 text-left mb-8">
+          Recommended Car
+          <span className="flex justify-end text-blue-600 font-medium">view all</span>
+        </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {cars.map((car, index) => (
-          <CarCard
-            key={index}
-            car={car}
-            index={index}
-            handleFavoriteToggle={(index) => console.log("Favorite toggled", index)}
-          />
-        ))}
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {cars.map((car, index) => (
+            <CarCard
+              key={index}
+              car={car}
+              index={index}
+              handleFavoriteToggle={(index) => console.log("Favorite toggled", index)}
+            />
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-6">
+          <button
+            className="px-6 py-3 text-white font-medium bg-blue-500 hover:bg-blue-600 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+            aria-label="Show More"
+          >
+            Show More
+          </button>
+        </div>
       </div>
-
-      <div className="flex justify-center mt-6">
-    <button
-      className="px-6 py-3 text-white font-medium bg-blue-500 hover:bg-blue-600 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
-      aria-label="Show More"
-    >
-      Show More
-    </button>
-  </div>
-    </div>
     </div>
   );
 };
