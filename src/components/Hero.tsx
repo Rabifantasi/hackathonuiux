@@ -8,7 +8,7 @@ import CarCard from "./CarCards";
 
 const Hero = () => {
   return (
-    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]">
+    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[20px] sm:mt-[10px]">
       <div className="bg-gray-1000 min-h-screen flex items-center justify-center">
         <section className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -26,7 +26,7 @@ const Hero = () => {
               <p className="text-white mb-6 w-full">
                 Ease of doing a car rental safely and reliably. Of course at a low price.
               </p>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+              <button className="bg-blue-600 text-white px-4 py-2 text-sm rounded-lg hover:bg-blue-700 sm:px-6 sm:py-3 sm:text-base">
                 Rental Car
               </button>
               <Image
@@ -173,14 +173,15 @@ export const PopularCarPage: React.FC = () => {
   };
 
   return (
-    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]">
+    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-6 sm:mt-[-100px]">
       <div className="p-6 bg-gray-100">
         <h2 className="text-xl font-bold text-slate-400 mt-6 ml-4 text-left mb-8">
           Popular Car
           <span className="flex justify-end text-blue-600 font-medium">view all</span>
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {cars.map((car, index) => (
             <CarCard
               key={index}
@@ -280,14 +281,15 @@ export const RecommendedCarPage: React.FC = () => {
   ];
 
   return (
-    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-[-100px]">
+    <div className="container p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 mt-6 sm:mt-[-100px]">
       <div className="p-6 bg-gray-100">
         <h2 className="text-xl font-bold text-slate-400 mt-6 ml-4 text-left mb-8">
           Recommended Car
           <span className="flex justify-end text-blue-600 font-medium">view all</span>
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {cars.map((car, index) => (
             <CarCard
               key={index}
@@ -300,7 +302,7 @@ export const RecommendedCarPage: React.FC = () => {
 
         <div className="flex justify-center mt-6">
           <button
-            className="px-6 py-3 text-white font-medium bg-blue-500 hover:bg-blue-600 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+            className="px-4 py-2 text-sm bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-md sm:px-6 sm:py-3 sm:text-base"
             aria-label="Show More"
           >
             Show More
